@@ -33,6 +33,14 @@ public:
         }
     }
 
+	std::string const& port_name() const {
+		return m_port_name;
+	}
+
+	int baud() const {
+		return m_baud;
+	}
+
     void set_callback(callback_t callback) {
         m_callback = callback;
     }
