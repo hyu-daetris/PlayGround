@@ -7,7 +7,7 @@ void ofApp::setup(){
 	m_serial.setup();
 	if ( !m_serial.available() )
 	{
-		std::cout << "[*] error : no serial port available" << std::endl;
+		std::cout << "[*] error : no serial port available - " << m_serial.port_name() << std::endl;
 	}
 	for ( int i = 0; i < 3; i++ )
 	{
@@ -75,6 +75,8 @@ void ofApp::draw(){
 
 	Top[topChange].draw(0, 0, 1920, 1080);
 	Bottom[bottomChange].draw(1920, 0, 1920, 1080);
+
+	ofRotate(270);
 
 	video->draw(-945, 1010, 880, 635);
 	video->play();
