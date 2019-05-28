@@ -19,7 +19,7 @@ private:
 		myTextFile.close();
 	}
 	public:
-		ofApp() : m_serial("COM5", 9600)
+		ofApp(std::string port_name) : m_serial(port_name, 9600)
 		{
 			m_serial.set_callback([this](int byte) { callback(byte); });
 		}
